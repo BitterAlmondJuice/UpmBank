@@ -27,6 +27,9 @@ public class Bank {
             case "datos":
                 System.out.println("PH datos");
                 break;
+            default:
+                System.out.println("PH error_de_entrada");
+                break;
         }
     }
 }
