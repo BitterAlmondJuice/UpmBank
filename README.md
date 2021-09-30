@@ -1,2 +1,2 @@
 # UpmBank
-Proyecto de Fundamentos de Programacion en la ETSISI
+Proyecto de Taller de Programacion en la ETSISI
