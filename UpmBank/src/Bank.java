@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Bank {
     public static void main(String[] args) {
-        System.out.printf("PlaceHolder seleccion (alta, crear cuenta, deposito, extraccion, transferencia, prestamo, datos\n)");
+        System.out.printf("PlaceHolder seleccion (alta, crear cuenta, deposito, extraccion, transferencia, prestamo, datos)\n");
         Scanner teclado = new Scanner(System.in);
         String entrada = teclado.nextLine();
         switch(entrada) {
