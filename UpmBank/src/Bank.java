@@ -9,17 +9,24 @@ public class Bank {
             case "alta":
                 System.out.printf("introduzca sus datos\nNombre:");
                 String nombre = teclado.nextLine();
-                switch (nombre){
+                switch (nombre) {
                     case "":
                         System.out.println("error de entrada, sin nombre no hay cuenta");
-                        break;
+                        System.exit(1);
                     default:
-                        System.out.println("fecha de nacimiento en formato DD/MM/AAAA:\n");/*aqui estoy intentando fijar un formato de fecha de nacimiento, evitando que el dia, mes y año sea menor que 1, evitando que el dia y el mes sean mayores que 12 y evitando que el año sea mayor que 2021*/
-                        int dia, mes, año;
-                        if (dia)  /*esto lo pongo solo para marcar que aqui acaba el codigo incompleto, ya lo hare en casita*/
                         break;
                 }
-
+                System.out.println("dia:");
+                long dia = teclado.nextLong();
+                System.out.println("mes:");
+                long mes = teclado.nextLong();
+                System.out.println("año:");
+                long año = teclado.nextLong();
+                if (dia < 32 && dia > 1 && mes>0 && mes < 13 && año<2022 && año > 1899) {
+                    System.out.println("tu fecha de nacimiento se ha establecido a "+dia+"/"+mes+"/"+año);
+                }else{
+                    System.out.println("error de entrada. ¿estas seguro que naciste el "+dia+"/"+mes+"/"+año+"?");
+                }
 
 
             break;
