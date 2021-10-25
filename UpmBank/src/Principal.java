@@ -1,7 +1,9 @@
 import java.util.Scanner;
 
 public class Principal {
+
     public static void main(String[] args) {
+
         System.out.printf("PlaceHolder seleccion (alta, crear cuenta, deposito, extraccion, transferencia, prestamo, datos)\n");
         Scanner teclado = new Scanner(System.in);
         String entrada = teclado.nextLine();
@@ -9,8 +11,13 @@ public class Principal {
             case "alta":
 
                 String nombre = Alta.nombre();
-                System.out.println("su nombre es " + nombre);
-                String fechaNacimiento = Alta.fechaNacimiento();
+                String fechaNacimiento = Alta.fecha();
+                int numDni = Alta.numDni();
+                String letraDni = Alta.letraDni();
+                String correo = Alta.correo();
+
+                System.out.println("nombre: " + nombre + "\nfecha de nacimiento: " + fechaNacimiento + "\nDNI: " + numDni + letraDni + "\nemail: " + correo);
+
                 break;
 
             case "crear cuenta":
@@ -36,4 +43,5 @@ public class Principal {
                 break;
         }
     }
+
 }
