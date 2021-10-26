@@ -22,6 +22,8 @@ public class Principal {
 
             case "crear cuenta":
                 System.out.println("PH crear cuenta");
+                String numCuenta = Cuentas.SICA();
+                System.out.println(numCuenta);
                 break;
             case "deposito":
                 System.out.println("PH deposito");
