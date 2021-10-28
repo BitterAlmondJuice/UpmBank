@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Alta {
 
-    static int numDni = (int) 00000000d;
+    static String numDni = "0";
 
     static short dia = 0;
 
@@ -35,9 +35,15 @@ public class Alta {
 
     public static String fecha() {
 
-        Scanner teclado = new Scanner(System.in);
+        Scanner teclado = new Scanner(System.in);System.out.print("introduzca su fecha de nacimiento dd/mm/aaaa\ndia:");
+        dia = teclado.nextShort();
+        System.out.print("mes:");
+        mes = teclado.nextShort();
+        System.out.print("año:");
+        ano = teclado.nextShort();
+
         while (dia > 31 || mes > 12 || ano > 2021 || dia < 1 || mes < 1 || ano < 1900){
-            System.out.print("introduzca su fecha de nacimiento dd/mm/aaaa\ndia:");
+            System.out.println("Error de entrada, introduzca su fecha de nacimiento de nuevo\ndia:");
             dia = teclado.nextShort();
             System.out.print("mes:");
             mes = teclado.nextShort();
@@ -50,19 +56,19 @@ public class Alta {
         System.out.printf("\nSe ha registrado su fecha de nacimiento como: %02d/%02d/%02d", dia, mes, ano);
         System.out.println("\n");
 
-        String fecha = "" + dia + "/" + mes + "/" + ano;
+        String fecha = String.format("%02d/%02d/%02d", dia, mes, ano);
         return fecha;
     }
 
-    public static int numDni() {
+    public static String numDni() {
 
         Scanner teclado = new Scanner(System.in);
         System.out.print("Introduzca su numero de DNI (Únicamente el numero):");
-        numDni = teclado.nextInt();
+        numDni = teclado.nextLine();
 
-        while (String.valueOf(numDni).length() != 8) {
+        while (Long.parseLong(numDni) > 99999999 || Long.parseLong(numDni) < 0) {
             System.out.println("Error de entrada, el Número de DNI no tiene la longitud correcta\nIntroduzcalo de nuevo");
-            numDni = teclado.nextInt();
+            numDni = teclado.nextLine();
         }
 
 
